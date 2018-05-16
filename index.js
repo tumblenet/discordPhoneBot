@@ -1,4 +1,4 @@
-//require("webserver-log");
+require("webserver-log");
 
 const discordbot = require('./discordbot.js');
 
