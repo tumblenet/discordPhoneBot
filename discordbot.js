@@ -155,6 +155,7 @@ function SendMessage(sender, call, message) {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setPresence({ game: { name: 'Type =help for commands' }, status: 'online' })
 });
 
 client.on('message', message => {
@@ -172,21 +173,21 @@ client.on('message', message => {
       //send message to other channel
   //if not in a call
     //detect if user asked to call
-    if (message.content == "!help") {
-      message.reply("**Commands**\n```\n!call - Make a call\n!call [id] - Join a specific call\n!calls - See Active Calls\n!hangup - Dissconect from current call\n!invite - put this phone on your own server\n!members - see members of this call\n```")
+    if (message.content == "=help") {
+      message.reply("**Commands**\n```\n=call - Make a call\n=call [id] - Join a specific call\n=calls - See Active Calls\n=hangup - Dissconect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n```")
       return;
     }
-  if (message.content == "!invite") {
+  if (message.content == "=invite") {
     message.reply("Use this link to add me on your server: https://discordapp.com/api/oauth2/authorize?client_id=446367231740215317&permissions=514112&scope=bot")
     return;
   }
-  if (message.content == "!calls") {
+  if (message.content == "=calls") {
     calls.forEach(call => {
       message.channel.send(call.getName())
     })
     return;
   }
-  if (message.content == "!phones") {
+  if (message.content == "=phones") {
     phones.forEach(phone => {
       message.channel.send(phone.name);
     })
@@ -195,13 +196,13 @@ client.on('message', message => {
   GetPhone(message.guild,message.channel,phone => {
     if (phone.inCall) {
       GetCall(phone, call => {
-          if (message.content == "!members") {
+          if (message.content == "=members") {
             call.members.forEach(member =>{
               message.channel.send(member.name);
             });
             return;
           }
-          if (message.content == "!hangup") {
+          if (message.content == "=hangup") {
             SendText(phone, call, phone.name + " Disconected");
             SendText(phone, call, "How ever you are still in a call and will need to `!hangup` to leave.");
             call.leave(phone);
@@ -211,8 +212,8 @@ client.on('message', message => {
         SendMessage(phone, call, message);
       })
     } else {
-      if (message.content.startsWith("!call ")) {
-        var id = message.content.replace("!call ","");
+      if (message.content.startsWith("=call ")) {
+        var id = message.content.replace("=call ","");
         message.channel.send("Phone Name: " + phone.name);
         GetCallID(phone, id, call => {
           message.channel.send("Joined " + call.getName() + " id:`" + call.id + "`");
@@ -220,16 +221,16 @@ client.on('message', message => {
             message.channel.send("Waiting for Answer")
           } else {
             SendText(phone, call, phone.name + "Joined the call");
-            SendText(phone, call, "Use `!hangup` to leave");
+            SendText(phone, call, "Use `=hangup` to leave");
             GetOtherEnd(phone, call, otherEnd => {
               message.channel.send("Connected to " + otherEnd.name);
-              message.channel.send("Use `!hangup` to leave");
+              message.channel.send("Use `=hangup` to leave");
             });
           }
           return;
         });
       }
-      if (message.content == "!call") {
+      if (message.content == "=call") {
         message.channel.send("Phone Name: " + phone.name);
         GetCall(phone, call => {
           message.channel.send("Joined " + call.getName() + " id:`" + call.id + "`");
@@ -237,10 +238,10 @@ client.on('message', message => {
             message.channel.send("Waiting for Answer")
           } else {
             SendText(phone, call, phone.name + "Joined the call");
-            SendText(phone, call, "Use `!hangup` to leave");
+            SendText(phone, call, "Use `=hangup` to leave");
             GetOtherEnd(phone, call, otherEnd => {
               message.channel.send("Connected to " + otherEnd.name);
-              message.channel.send("Use `!hangup` to leave");
+              message.channel.send("Use `=hangup` to leave");
             });
           }
         });
