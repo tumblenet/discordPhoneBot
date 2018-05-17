@@ -418,7 +418,7 @@ client.on('message', message => {
               if (call.members.length == 1) {
                 message.channel.send("Waiting for Answer")
               } else {
-                SendText(phone, call, "@here Someone has requested for phone a friend");
+                SendText(phone, call, "Someone has requested for phone a friend");
                 SendText(phone, call, "Use `=hangup` to leave");
                 GetOtherEnd(phone, call, otherEnd => {
                   message.channel.send("Connected to " + otherEnd.name);
