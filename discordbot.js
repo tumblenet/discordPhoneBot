@@ -147,7 +147,7 @@ function SendMessage(sender, call, message) {
           console.log("Sending \"" + message.content + "\" from " + sender.name + " to " + member.name + " via " + call.getName());
           var sendertext = "**" + message.member.user.tag + "**";
           if (call.members.length > 2) {
-            sendertext = "**[" + sender.name +  "]" + message.member.user.tag + "**";
+            sendertext = "**[" + sender.name +  "] " + message.member.user.tag + "**";
           }
           channel.send(sendertext + ": " +  message.content);
         });
