@@ -159,6 +159,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+  try {
   if (message.guild == undefined) {
     return;
   }
@@ -274,8 +275,10 @@ client.on('message', message => {
     }
 
   });
-
-
+}
+catch(e) {
+  message.channel.send(e)
+}
 });
 
 module.exports = client;
