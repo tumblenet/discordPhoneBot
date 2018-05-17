@@ -29,9 +29,9 @@ Call.prototype.getMembers = function(id=0) {
     return;
   }
   if (id==0) {
-    return this.members[id] + this.getMembers(id+1).name;
+    return this.members[id].name + this.getMembers(id+1)
   }else {
-    return ", " + this.members[id] + this.getMembers(id+1).name;
+    return ", " + this.members[id].name + this.getMembers(id+1);
   }
 }
 
