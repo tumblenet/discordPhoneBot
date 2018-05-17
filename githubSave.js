@@ -1,5 +1,6 @@
 const Github = require('github-api');
 const path = require('path');
+const request = require('request');
 
 var lastData = "";
 
@@ -10,10 +11,16 @@ var github = new Github({
 
 
 var repo = github.getRepo("tumble1999", "discordPhoneBot");
+request({
+  url: "https://raw.githubusercontent.com/tumble1999/discordPhoneBot/master/data/phones.json",
+  json: true,
+  followAllRedirects: true
+}, function (error, response, body) {
 
-repo.read('master', 'data/phones.json', function (data) {
-    lastData = data;
-  })
+  if (!error && response.statusCode === 200) {
+    lastData = body;
+  }
+});
 
 var options = {
   author: {name: 'HerokuSave', email: 'api@tumblenet.ga'},
