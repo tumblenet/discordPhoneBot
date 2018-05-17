@@ -38,7 +38,7 @@ function SavePhones(data, cb) {
   var callback = cb || function (err) {
     console.log(err);
   }
-  if (lastData == JSON.stringify(data, null, '\t')) {
+  if (lastData == data) {
     callback("phones is already up to date")
   } else {
     repo.writeFile('master', 'data/phones.json', JSON.stringify(data, null, '\t'), 'Update Phones feed', options,
