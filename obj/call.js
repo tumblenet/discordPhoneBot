@@ -21,17 +21,17 @@ Call.prototype.leave = function (phone) {
 }
 
 Call.prototype.getName = function() {
-  return "Call (" + this.members.length + ") members - " + this.id +  " - [" + this.getMembers() + "]";
+  return "Call (" + this.members.length + ") members - [" + this.getMembers() + "]";
 }
 
 Call.prototype.getMembers = function(id=0) {
-  if (id == 5) {
+  if (id == this.memebers.length ||id == 5) {
     return;
   }
   if (id==0) {
-    return this.members[id] + this.getMembers(id+1);
+    return this.members[id] + this.getMembers(id+1).name;
   }else {
-    return ", " + this.members[id] + this.getMembers(id+1);
+    return ", " + this.members[id] + this.getMembers(id+1).name;
   }
 }
 
