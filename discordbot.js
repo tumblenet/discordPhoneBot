@@ -62,7 +62,7 @@ function GetPhone(guild, channel, callback) {
   });
   if (!found) {
     var id = phones.length;
-    var phone = new Phone(id, guild.id, channel.id, guild.name + "#" + channel.name)
+    var phone = new Phone(id, guild.id, channel.id, guild.toString() + "#" + channel.toString())
     phones.push(phone);
     callback(phone);
   }
