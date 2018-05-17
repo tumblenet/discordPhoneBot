@@ -269,18 +269,18 @@ client.on('message', message => {
         switch (params.shift()) {
           case "setid":
             var newid = params.shift();
-            // var phoneId = params.shift();
-            // if (phoneId != undefined) {
-            //   GetPhoneFromID(phoneId, phone => {
-            //     if(phoneIdExists(newid)){
-            //       message.channel.send("The id `" + newid + "` is taken");
-            //     } else{
-            //       phone.id = newid;
-            //       message.channel.send("Phone id set to " + phone.id);
-            //     }
-            //   });
-            //   return;
-            // }
+            var phoneId = params.shift();
+            if (phoneId != undefined) {
+              GetPhoneFromID(phoneId, queriedphone => {
+                if(phoneIdExists(newid)){
+                  message.channel.send("The id `" + newid + "` is taken");
+                } else{
+                  queriedphone.id = newid;
+                  message.channel.send("Phone id set to " + queriedphone.id);
+                }
+              });
+              return;
+            }
             if(phoneIdExists(newid)){
               message.channel.send("The id `" + newid + "` is taken");
             } else {
