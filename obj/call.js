@@ -21,7 +21,7 @@ Call.prototype.leave = function (phone) {
 }
 
 Call.prototype.getName = function() {
-  return "Call (" + this.members.length + ") members - " + this.id " - [" + this.getMembers() + "]";
+  return "Call (" + this.members.length + ") members - " + this.id +  " - [" + this.getMembers() + "]";
 }
 
 Call.prototype.getMembers(id=0) {
