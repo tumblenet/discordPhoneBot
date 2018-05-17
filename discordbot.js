@@ -182,12 +182,18 @@ client.on('message', message => {
     return;
   }
   if (message.content == "=calls") {
+    if (this.calls.length == 0) {
+        message.channel.send("There are no calls");
+    }
     calls.forEach(call => {
       message.channel.send(call.getName())
     })
     return;
   }
   if (message.content == "=phones") {
+    if (this.phones.length == 0) {
+        message.channel.send("There are no phones");
+    }
     phones.forEach(phone => {
       message.channel.send(phone.name);
     })
@@ -206,11 +212,22 @@ client.on('message', message => {
             SendText(phone, call, phone.name + " Disconected");
             SendText(phone, call, "How ever you are still in a call and will need to `!hangup` to leave.");
             call.leave(phone);
+            if (call.members.length == 0) {
+                var index = this.calls.indexOf(call);
+                if (index > -1) {
+                  this.calls.splice(index, 1);
+                }
+            }
             message.channel.send("Disconected");
+            var index = this.phones.indexOf(phone);
+            if (index > -1) {
+              this.phones.splice(index, 1);
+            }
             return;
           }
         SendMessage(phone, call, message);
-      })
+      });
+      return;
     } else {
       if (message.content.startsWith("=call ")) {
         var id = message.content.replace("=call ","");
@@ -226,9 +243,11 @@ client.on('message', message => {
               message.channel.send("Connected to " + otherEnd.name);
               message.channel.send("Use `=hangup` to leave");
             });
+            return;
           }
           return;
         });
+        return;
       }
       if (message.content == "=call") {
         message.channel.send("Phone Name: " + phone.name);
@@ -243,8 +262,14 @@ client.on('message', message => {
               message.channel.send("Connected to " + otherEnd.name);
               message.channel.send("Use `=hangup` to leave");
             });
+            return;
           }
         });
+        return;
+      }
+      var index = this.phones.indexOf(phone);
+      if (index > -1) {
+        this.phones.splice(index, 1);
       }
     }
 
