@@ -174,7 +174,7 @@ client.on('message', message => {
   //if not in a call
     //detect if user asked to call
     if (message.content == "=help") {
-      message.reply("**Commands**\n```\n=call - Make a call\n=call [id] - Join a specific call\n=calls - See Active Calls\n=hangup - Dissconect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n```")
+      message.reply("**Commands**\n```\n=call - Make a call\n=call [id] - Join a specific call\n=calls - See Active Calls\n=hangup - Disconnect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n```")
       return;
     }
   if (message.content == "=invite") {
@@ -182,7 +182,7 @@ client.on('message', message => {
     return;
   }
   if (message.content == "=calls") {
-    if (this.calls.length == 0) {
+    if (calls.length == 0) {
         message.channel.send("There are no calls");
     }
     calls.forEach(call => {
@@ -191,7 +191,7 @@ client.on('message', message => {
     return;
   }
   if (message.content == "=phones") {
-    if (this.phones.length == 0) {
+    if (phones.length == 0) {
         message.channel.send("There are no phones");
     }
     phones.forEach(phone => {
@@ -213,15 +213,15 @@ client.on('message', message => {
             SendText(phone, call, "How ever you are still in a call and will need to `!hangup` to leave.");
             call.leave(phone);
             if (call.members.length == 0) {
-                var index = this.calls.indexOf(call);
+                var index = calls.indexOf(call);
                 if (index > -1) {
-                  this.calls.splice(index, 1);
+                  calls.splice(index, 1);
                 }
             }
             message.channel.send("Disconected");
-            var index = this.phones.indexOf(phone);
+            var index = phones.indexOf(phone);
             if (index > -1) {
-              this.phones.splice(index, 1);
+              phones.splice(index, 1);
             }
             return;
           }
@@ -267,9 +267,9 @@ client.on('message', message => {
         });
         return;
       }
-      var index = this.phones.indexOf(phone);
+      var index = phones.indexOf(phone);
       if (index > -1) {
-        this.phones.splice(index, 1);
+        phones.splice(index, 1);
       }
     }
 
