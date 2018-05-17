@@ -267,7 +267,7 @@ client.on('message', message => {
           if (call.members.length == 1) {
             message.channel.send("Waiting for Answer")
           } else {
-            SendText(phone, call, phone.name + "Joined the call");
+            SendText(phone, call, phone.name + " joined the call");
             SendText(phone, call, "Use `=hangup` to leave");
             GetOtherEnd(phone, call, otherEnd => {
               message.channel.send("Connected to " + otherEnd.name);
