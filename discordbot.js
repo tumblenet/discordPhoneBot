@@ -23,8 +23,9 @@ function idExists(id) {
 function makeID() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
+  
   do {
+    for (var i = 0; i < 6; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
   } while (idExists(text));
 
