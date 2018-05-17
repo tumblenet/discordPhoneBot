@@ -4,7 +4,7 @@
 		"name": "WhoWantsToBeAMillionare<#445354780873850883>",
 		"guild": "445354780873850881",
 		"channel": "445354780873850883",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": true,
 		"wwtbam": false
 	},
@@ -13,7 +13,7 @@
 		"name": "Tumble Network<#446693868147310603>",
 		"guild": "337887798889545728",
 		"channel": "446693868147310603",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
 	}
