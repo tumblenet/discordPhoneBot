@@ -178,7 +178,7 @@ client.on('message', message => {
       return;
     }
   if (message.content == "=invite") {
-    message.reply("Use this link to add me on your server: https://discordapp.com/api/oauth2/authorize?client_id=446367231740215317&permissions=514112&scope=bot")
+    message.reply("Use this link to add me on your server: https://discordapp.com/api/oauth2/authorize?client_id=446367231740215317&permissions=67622976&scope=bot")
     return;
   }
   if (message.content == "=calls") {
