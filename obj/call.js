@@ -25,7 +25,7 @@ Call.prototype.getName = function() {
 }
 
 Call.prototype.getMembers = function(id=0) {
-  if (id == this.memebers.length ||id == 5) {
+  if (id == this.members.length || id == 5) {
     return;
   }
   if (id==0) {
