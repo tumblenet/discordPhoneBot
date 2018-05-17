@@ -30,7 +30,7 @@ function GetChannel(guild, channelid, callback) {
     }
     if (channel.id == channelid) {
       found = true;
-      console.log("Found Channel: " + guild.name + "#" + channel.name + " (guildid)");
+      console.log("Found Channel: " + guild.name + "" + channel.name + " (guildid)");
       callback(channel);
     }
   });
