@@ -9,18 +9,21 @@ var github = new Github({
   auth: "oauth"
 });
 
+function UpdateLast() {
+  request({
+    url: "https://raw.githubusercontent.com/tumble1999/discordPhoneBot/master/data/phones.json",
+    json: true,
+    followAllRedirects: true
+  }, function (error, response, body) {
+
+    if (!error && response.statusCode === 200) {
+      lastData = body;
+    }
+  });
+}
 
 var repo = github.getRepo("tumble1999", "discordPhoneBot");
-request({
-  url: "https://raw.githubusercontent.com/tumble1999/discordPhoneBot/master/data/phones.json",
-  json: true,
-  followAllRedirects: true
-}, function (error, response, body) {
-
-  if (!error && response.statusCode === 200) {
-    lastData = body;
-  }
-});
+UpdateLast();
 
 var options = {
   author: {name: 'HerokuSave', email: 'api@tumblenet.ga'},
@@ -28,10 +31,10 @@ var options = {
   encode: true // Whether to base64 encode the file. (default: true)
 }
 
+
+
 function SavePhones(data, cb) {
-  repo.read('master', 'data/phones.json', function (err,data) {
-    lastData = data;
-  });
+  UpdateLast();
   var callback = cb || function (err) {
     console.log(err);
   }
