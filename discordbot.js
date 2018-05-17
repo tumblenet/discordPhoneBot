@@ -23,7 +23,7 @@ function idExists(id) {
 function makeID() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  
+
   do {
     for (var i = 0; i < 6; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -41,7 +41,7 @@ function GetGuild(guildid,callback) {
     }
     if (guild.id == guildid) {
       found = true;
-      console.log("Found Guild: " + guild.name + " (guildid)");
+      console.log("Found Guild: " + guild.name + " (" + guildid + ")");
       callback(guild);
     }
   });
@@ -55,7 +55,7 @@ function GetChannel(guild, channelid, callback) {
     }
     if (channel.id == channelid) {
       found = true;
-      console.log("Found Channel: " + guild.name + "#" + channel.name + " (guildid)");
+      console.log("Found Channel: " + guild.name + "#" + channel.name + " (" + channel.id + ")");
       callback(channel);
     }
   });
