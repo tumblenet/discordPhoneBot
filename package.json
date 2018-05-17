@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "github-api": "^3.0.0",
     "webserver-log": "github:tumblenet/webserver-log"
   },
   "devDependencies": {},
