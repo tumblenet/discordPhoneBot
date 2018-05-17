@@ -149,7 +149,7 @@ function SendMessage(sender, call, message) {
           if (call.members.length > 2) {
             sendertext = "**[" + sender.name +  "]" + message.member.user.tag + "**";
           }
-          channel.send("**" + message.member.user.tag + "**: " +  message.content);
+          channel.send(sendertext + ": " +  message.content);
         });
       });
     }
