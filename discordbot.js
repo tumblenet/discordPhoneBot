@@ -7,6 +7,16 @@ const Call = require('./obj/call.js');
 var phones = [];
 var calls = [];
 
+function makeID() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 6; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
 function GetGuild(guildid,callback) {
   console.log("Finding guild: " + guildid);
   var found = false;
@@ -61,7 +71,7 @@ function GetPhone(guild, channel, callback) {
     }
   });
   if (!found) {
-    var id = phones.length;
+    var id = makeID();
     var phone = new Phone(id, guild.id, channel.id, guild.toString() + "" + channel.toString())
     phones.push(phone);
     callback(phone);
@@ -191,7 +201,7 @@ client.on('message', message => {
         message.channel.send("There are no calls");
     }
     calls.forEach(call => {
-      message.channel.send(call.getName())
+      message.channel.send(call.id + " - " + call.getName())
     })
     return;
   }
