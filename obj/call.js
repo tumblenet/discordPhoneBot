@@ -21,7 +21,18 @@ Call.prototype.leave = function (phone) {
 }
 
 Call.prototype.getName = function() {
-  return "Call (" + this.members.length + ") members";
+  return "Call (" + this.members.length + ") members - " + this.id " - [" + this.getMembers() + "]";
+}
+
+Call.prototype.getMembers(id=0) {
+  if (id == 5) {
+    return;
+  }
+  if (id==0) {
+    return this.members[id] + this.getMembers(id+1);
+  }else {
+    return ", " + this.members[id] + this.getMembers(id+1);
+  }
 }
 
 module.exports = Call;

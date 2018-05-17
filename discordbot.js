@@ -209,7 +209,7 @@ client.on('message', message => {
             return;
           }
           if (message.content == "=hangup") {
-            SendText(phone, call, phone.name + " Disconected");
+            SendText(phone, call, phone.name + " Disconnected");
             SendText(phone, call, "How ever you are still in a call and will need to `!hangup` to leave.");
             call.leave(phone);
             if (call.members.length == 0) {
@@ -233,7 +233,7 @@ client.on('message', message => {
         var id = message.content.replace("=call ","");
         message.channel.send("Phone Name: " + phone.name);
         GetCallID(phone, id, call => {
-          message.channel.send("Joined " + call.getName() + " id:`" + call.id + "`");
+          message.channel.send("Joined " + call.getName() + " Call Name:`" + call.id + "`");
           if (call.members.length == 1) {
             message.channel.send("Waiting for Answer")
           } else {
@@ -252,7 +252,7 @@ client.on('message', message => {
       if (message.content == "=call") {
         message.channel.send("Phone Name: " + phone.name);
         GetCall(phone, call => {
-          message.channel.send("Joined " + call.getName() + " id:`" + call.id + "`");
+          message.channel.send("Joined " + call.getName() + " Call Name:`" + call.id + "`");
           if (call.members.length == 1) {
             message.channel.send("Waiting for Answer")
           } else {
