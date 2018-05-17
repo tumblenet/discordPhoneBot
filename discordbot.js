@@ -324,15 +324,8 @@ client.on('message', message => {
           }
           if (message.content == "=hangup") {
             SendText(phone, call, phone.name + " Disconnected");
+            SendText(phone, call, "How ever you are still in a call and will need to `=hangup` to leave.");
             call.leave(phone);
-            GetOtherEnd(phone, call ,otherEnd => {
-              if (otherEnd.wwtbam) {
-                call.hangup(otherEnd);
-              }
-              else {
-                SendText(phone, call, "However you are still in a call and will need to `=hangup` to leave.");
-              }
-            });
             if (call.members.length == 0) {
                 var index = calls.indexOf(call);
                 if (index > -1) {
@@ -429,6 +422,7 @@ client.on('message', message => {
                 SendText(phone, call, "Use `=hangup` to leave");
                 GetOtherEnd(phone, call, otherEnd => {
                   message.channel.send("Connected to " + otherEnd.name);
+                  message.channel.send("Use `=hangup` to leave");
                 });
                 return;
               }
