@@ -7,12 +7,26 @@ const Call = require('./obj/call.js');
 var phones = [];
 var calls = [];
 
+function idExists(id) {
+  var found = false;
+  phones.forEach(phone => {
+    if (found) {
+      return;
+    }
+    if (phone.id == id) {
+      found = true;
+    }
+  });
+  return found;
+}
+
 function makeID() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  for (var i = 0; i < 6; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  do {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  } while (idExists(text));
 
   return text;
 }
