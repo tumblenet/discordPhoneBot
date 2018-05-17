@@ -9,11 +9,11 @@ var calls = [];
 
 function idExists(id) {
   var found = false;
-  phones.forEach(phone => {
+  calls.forEach(phone => {
     if (found) {
       return;
     }
-    if (phone.id == id) {
+    if (calls.id == id) {
       found = true;
     }
   });
@@ -86,7 +86,7 @@ function GetPhone(guild, channel, callback) {
     }
   });
   if (!found) {
-    var id = makeID();
+    var id = phones.length;
     var phone = new Phone(id, guild.id, channel.id, guild.toString() + "" + channel.toString())
     phones.push(phone);
     callback(phone);
