@@ -114,7 +114,7 @@ function GetCall(phone, callback) {
     }
   });
   if (!found) {
-    var id = calls.length;
+    var id = makeID();
     var call = new Call(id,phone);
     calls.push(call);
     callback(call);
@@ -225,7 +225,7 @@ client.on('message', message => {
         message.channel.send("There are no phones");
     }
     phones.forEach(phone => {
-      message.channel.send(phone.name);
+      message.channel.send(phone.id + " " + phone.name);
     })
     return;
   }
