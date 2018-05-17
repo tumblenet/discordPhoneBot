@@ -7,5 +7,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": false
+	},
+	{
+		"id": "5ubP4j",
+		"name": "Tumble Network<#446693868147310603>",
+		"guild": "337887798889545728",
+		"channel": "446693868147310603",
+		"inCall": false,
+		"noDelete": true,
+		"wwtbam": true
 	}
 ]
