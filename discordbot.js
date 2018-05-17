@@ -394,10 +394,10 @@ client.on('message', message => {
           if (id == "!paf") {
             var found = false;
             phones.forEach(phone => {
-              if (found) {
-                return;
-              }
               if (phone.wwtbam) {
+                if (found == false) {
+                  message.channel.send("**Who would you like to call**")
+                }
                 found = true;
                 message.channel.send(phone.name + " - (`!paf " + phone.id + "`)")
               }
