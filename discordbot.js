@@ -146,7 +146,7 @@ function SendMessage(sender, call, message) {
         GetChannel(guild, member.channel, channel => {
           console.log("Sending \"" + message.content + "\" from " + sender.name + " to " + member.name + " via " + call.getName());
           var sendertext = "**" + message.member.user.tag + "**";
-          if (call.members > 2) {
+          if (call.members.length > 2) {
             sendertext = "**[" + sender.name +  "]" + message.member.user.tag + "**";
           }
           channel.send("**" + message.member.user.tag + "**: " +  message.content);
