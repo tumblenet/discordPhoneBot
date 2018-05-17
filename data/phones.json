@@ -13,7 +13,7 @@
 		"name": "Tumble Network<#446693868147310603>",
 		"guild": "337887798889545728",
 		"channel": "446693868147310603",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
 	}
