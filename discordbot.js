@@ -30,7 +30,7 @@ function GetChannel(guild, channelid, callback) {
     }
     if (channel.id == channelid) {
       found = true;
-      console.log("Found Channel: " + guild.name + "" + channel.name + " (guildid)");
+      console.log("Found Channel: " + guild.name + "#" + channel.name + " (guildid)");
       callback(channel);
     }
   });
@@ -62,7 +62,7 @@ function GetPhone(guild, channel, callback) {
   });
   if (!found) {
     var id = phones.length;
-    var phone = new Phone(id, guild.id, channel.id, guild.toString() + "#" + channel.toString())
+    var phone = new Phone(id, guild.id, channel.id, guild.toString() + "" + channel.toString())
     phones.push(phone);
     callback(phone);
   }
