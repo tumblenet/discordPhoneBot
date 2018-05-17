@@ -255,7 +255,7 @@ client.on('message', message => {
           message.channel.send("There are no phones");
       }
       phones.forEach(phone => {
-        message.channel.send("`" + phone.id + "'' " + phone.name);
+        message.channel.send("`" + phone.id + "` " + phone.name);
       })
       return;
     }
@@ -301,6 +301,19 @@ client.on('message', message => {
         }
       }
     }
+    if (message.content == "=wwtbam") {
+      if (message.member.hasPermission(Discord.Permissions.FLAGS.ADMINISTRATOR,null,true,true)) {
+        phone.noDelete = !phone.wwtbam;
+        phone.wwtbam = !phone.wwtbam;
+        if (phone.wwtbam) {
+          message.channel.send("The phone \"" + phone.name + "\" is now a <@445534047612043264> phone and will be called automaticaly.\n Please keep mind that you cannot call out from this phone")
+        } else {
+          message.channel.send("This is now a normal phone, ringing out is now possible.")
+        }
+      } else {
+        message.reply("Only admins can run this command")
+      }
+    }
     if (phone.inCall) {
       GetCall(phone, call => {
           if (message.content == "=members") {
@@ -332,19 +345,6 @@ client.on('message', message => {
       });
       return;
     } else {
-      if (message.content == "=wwtbam") {
-        if (message.member.hasPermission(Discord.Permissions.FLAGS.ADMINISTRATOR,null,true,true)) {
-          phone.noDelete = !phone.wwtbam;
-          phone.wwtbam = !phone.wwtbam;
-          if (phone.wwtbam) {
-            message.channel.send("The phone \"" + phone.name + "\" is now a <@445534047612043264> phone and will be called automaticaly.\n Please keep mind that you cannot call out from this phone")
-          } else {
-            message.channel.send("This is now a normal phone, ringing out is now possible.")
-          }
-        } else {
-          message.reply("Only admins can run this command")
-        }
-      }
       if (!phone.wwtbam && phone.id != WWTBAM_PID) {
         if (message.content.startsWith("=call ")) {
           var id = message.content.replace("=call ","");
