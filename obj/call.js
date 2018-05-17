@@ -26,7 +26,7 @@ Call.prototype.getName = function() {
 
 Call.prototype.getMembers = function(id=0) {
   if (id == this.members.length || id == 5) {
-    return;
+    return "";
   }
   if (id==0) {
     return this.members[id].name + this.getMembers(id+1)
