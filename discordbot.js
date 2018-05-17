@@ -255,7 +255,7 @@ client.on('message', message => {
           message.channel.send("There are no phones");
       }
       phones.forEach(phone => {
-        message.channel.send(phone.id + " " + phone.name);
+        message.channel.send("`" + phone.id + "'' " + phone.name);
       })
       return;
     }
