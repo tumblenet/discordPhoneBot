@@ -7,5 +7,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": false
+	},
+	{
+		"id": "face",
+		"name": "DiscordTesting<#446689760363413508>",
+		"guild": "379672971112873984",
+		"channel": "446689760363413508",
+		"inCall": false,
+		"noDelete": true,
+		"wwtbam": false
 	}
 ]
