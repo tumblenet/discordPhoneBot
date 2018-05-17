@@ -326,6 +326,12 @@ client.on('message', message => {
             SendText(phone, call, phone.name + " Disconnected");
             SendText(phone, call, "How ever you are still in a call and will need to `=hangup` to leave.");
             call.leave(phone);
+            if (call.memebers.length == 1) {
+              GetOtherEnd(phone, call otherEnd => {
+                call.leave(otherEnd);
+                SendText(phone, call, "Disconnected");
+              });
+            }
             if (call.members.length == 0) {
                 var index = calls.indexOf(call);
                 if (index > -1) {
