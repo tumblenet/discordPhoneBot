@@ -8,6 +8,7 @@ const Call = require('./obj/call.js');
 
 const OWNER_ID = "336869008148135948";
 const WWTBAM_PID = "wwtbampaf";
+const INVITE_LINK = "https://discordapp.com/api/oauth2/authorize?client_id=446367231740215317&permissions=378880&scope=bot";
 
 var phones = [];
 var calls = [];
@@ -237,7 +238,7 @@ client.on('message', message => {
     return;
   }
   if (message.content == "=invite") {
-    message.reply("Use this link to add me on your server: https://discordapp.com/api/oauth2/authorize?client_id=446367231740215317&permissions=67622976&scope=bot")
+    message.reply("Use this link to add me on your server: " + INVITE_LINK  )
     return;
   }
   if (message.member.id == OWNER_ID) {
