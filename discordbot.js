@@ -230,7 +230,7 @@ client.on('message', message => {
   //if not in a call
     //detect if user asked to call
     if (message.content == "=help") {
-      message.reply("**Commands**\n```\n=call - Make a call\n=call [name] - Join a specific call\n=calls - See Active Calls\n=hangup - Disconnect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n```")
+      message.reply("**Commands**\n```\n=call - Make a call\n=call [name] - Join a specific call\n=calls - See Active Calls\n=hangup - Disconnect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n```\nNeed any specific help?: https://discord.gg/TWbkwT9")
       return;
     }
   if (message.content == "=owner") {
