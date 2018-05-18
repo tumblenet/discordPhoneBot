@@ -16,5 +16,14 @@
 		"inCall": true,
 		"noDelete": true,
 		"wwtbam": true
+	},
+	{
+		"id": "RgEj2o",
+		"name": "Tumble Network<#447107525637177345>",
+		"guild": "337887798889545728",
+		"channel": "447107525637177345",
+		"inCall": false,
+		"noDelete": true,
+		"wwtbam": true
 	}
 ]
