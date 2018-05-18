@@ -14,7 +14,7 @@
 		"guild": "337887798889545728",
 		"channel": "446693868147310603",
 		"inCall": true,
-		"noDelete": true,
-		"wwtbam": true
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
