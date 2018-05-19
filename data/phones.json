@@ -22,16 +22,7 @@
 		"name": "Tumble Network<#337887798889545728>",
 		"guild": "337887798889545728",
 		"channel": "337887798889545728",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
-	},
-	{
-		"id": "sjsGGV",
-		"name": "Tumble<#446981442443149314>",
-		"guild": "446981442443149312",
-		"channel": "446981442443149314",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": false,
 		"wwtbam": false
 	}
