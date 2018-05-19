@@ -4,21 +4,12 @@
 		"name": "WhoWantsToBeAMillionare<#445354780873850883>",
 		"guild": "445354780873850881",
 		"channel": "445354780873850883",
-		"inCall": false,
+		"inCall": true,
 		"noDelete": true,
 		"wwtbam": false
 	},
 	{
 		"id": "tumblenet",
-		"name": "Tumble Network<#446693868147310603>",
-		"guild": "337887798889545728",
-		"channel": "446693868147310603",
-		"inCall": false,
-		"noDelete": true,
-		"wwtbam": true
-	},
-	{
-		"id": "uQj6Ik",
 		"name": "Tumble Network<#447107525637177345>",
 		"guild": "337887798889545728",
 		"channel": "447107525637177345",
