@@ -79,23 +79,5 @@
 		"inCall": true,
 		"noDelete": false,
 		"wwtbam": false
-	},
-	{
-		"id": "sOjyqR",
-		"name": "WhoWantsToBeAMillionare<#445367959221698560>",
-		"guild": "445354780873850881",
-		"channel": "445367959221698560",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
-	},
-	{
-		"id": "V6eOuk",
-		"name": "WhoWantsToBeAMillionare<#445383445254897665>",
-		"guild": "445354780873850881",
-		"channel": "445383445254897665",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
 	}
 ]
