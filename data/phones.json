@@ -70,5 +70,14 @@
 		"inCall": true,
 		"noDelete": false,
 		"wwtbam": false
+	},
+	{
+		"id": "RyNB5i",
+		"name": "WhoWantsToBeAMillionare<#445367602240552960>",
+		"guild": "445354780873850881",
+		"channel": "445367602240552960",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
