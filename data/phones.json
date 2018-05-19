@@ -16,14 +16,5 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
-	},
-	{
-		"id": "Jlm841",
-		"name": "Tumble Network<#337887798889545728>",
-		"guild": "337887798889545728",
-		"channel": "337887798889545728",
-		"inCall": false,
-		"noDelete": false,
-		"wwtbam": false
 	}
 ]
