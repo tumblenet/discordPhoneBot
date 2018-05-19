@@ -34,5 +34,14 @@
 		"inCall": true,
 		"noDelete": false,
 		"wwtbam": false
+	},
+	{
+		"id": "GXc3GZ",
+		"name": "Tumble Network<#447044319602278409>",
+		"guild": "337887798889545728",
+		"channel": "447044319602278409",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
