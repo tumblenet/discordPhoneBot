@@ -25,5 +25,14 @@
 		"inCall": true,
 		"noDelete": false,
 		"wwtbam": false
+	},
+	{
+		"id": "V190eB",
+		"name": "Tumble Network<#447193853556948992>",
+		"guild": "337887798889545728",
+		"channel": "447193853556948992",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
