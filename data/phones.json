@@ -25,14 +25,5 @@
 		"inCall": false,
 		"noDelete": false,
 		"wwtbam": false
-	},
-	{
-		"id": "HocJJX",
-		"name": "Tumble's Bots<#447758823931904000>",
-		"guild": "446981442443149312",
-		"channel": "447758823931904000",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
 	}
 ]
