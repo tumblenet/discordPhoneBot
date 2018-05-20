@@ -16,5 +16,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
+	},
+	{
+		"id": "JXN4km",
+		"name": "Le Discord<#395239390320001026>",
+		"guild": "395239390320001024",
+		"channel": "395239390320001026",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
