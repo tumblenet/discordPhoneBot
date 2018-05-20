@@ -16,5 +16,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
+	},
+	{
+		"id": "gD5pts",
+		"name": "Discord Bot List<#265156322012561408>",
+		"guild": "264445053596991498",
+		"channel": "265156322012561408",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
