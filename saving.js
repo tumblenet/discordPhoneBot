@@ -1,7 +1,6 @@
 const fs = require('fs');
 const githubSave = require('./githubSave.js');
 
-var channelsFile = __dirname + "/data/channels.json";
 var phonesFile = __dirname + "/data/phones.json";
 
 function LoadPhoneData(callback=function (data) {}) {

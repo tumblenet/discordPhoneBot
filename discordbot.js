@@ -8,7 +8,7 @@ const Call = require('./obj/call.js');
 
 const OWNER_ID = "336869008148135948";
 const WWTBAM_PID = "wwtbampaf";
-const INVITE_LINK = "https://discordapp.com/api/oauth2/authorize?client_id=446367231740215317&permissions=378880&scope=bot";
+const INVITE_LINK = "http://tnphone.tumblenet.ga";
 
 var phones = [];
 var calls = [];
