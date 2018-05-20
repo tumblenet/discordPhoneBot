@@ -16,5 +16,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
+	},
+	{
+		"id": "bGsCZ8",
+		"name": "i like bacon<#447197163676631041>",
+		"guild": "447189505783496714",
+		"channel": "447197163676631041",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
