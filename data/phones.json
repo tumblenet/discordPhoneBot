@@ -31,16 +31,7 @@
 		"name": "i like bacon<#447197163676631041>",
 		"guild": "447189505783496714",
 		"channel": "447197163676631041",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
-	},
-	{
-		"id": "XLGjVX",
-		"name": "Tumble's Bots<#446981442443149314>",
-		"guild": "446981442443149312",
-		"channel": "446981442443149314",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": false,
 		"wwtbam": false
 	}
