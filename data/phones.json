@@ -18,20 +18,11 @@
 		"wwtbam": true
 	},
 	{
-		"id": "s9Kgmf",
-		"name": "DBL Verification Center<#335122991455141888>",
-		"guild": "333949691962195969",
-		"channel": "335122991455141888",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
-	},
-	{
 		"id": "YxfhTR",
 		"name": "DBL Verification Center<#358924080751050753>",
 		"guild": "333949691962195969",
 		"channel": "358924080751050753",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": false,
 		"wwtbam": false
 	}
