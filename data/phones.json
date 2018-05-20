@@ -22,16 +22,7 @@
 		"name": "Discord Bot List<#265156322012561408>",
 		"guild": "264445053596991498",
 		"channel": "265156322012561408",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
-	},
-	{
-		"id": "EKx9Bg",
-		"name": "Discord Bot List<#265156286406983680>",
-		"guild": "264445053596991498",
-		"channel": "265156286406983680",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": false,
 		"wwtbam": false
 	}
