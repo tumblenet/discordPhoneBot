@@ -4,7 +4,7 @@
 		"name": "WhoWantsToBeAMillionare<#445354780873850883>",
 		"guild": "445354780873850881",
 		"channel": "445354780873850883",
-		"inCall": false,
+		"inCall": true,
 		"noDelete": true,
 		"wwtbam": false
 	},
@@ -16,14 +16,5 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
-	},
-	{
-		"id": "YxfhTR",
-		"name": "DBL Verification Center<#358924080751050753>",
-		"guild": "333949691962195969",
-		"channel": "358924080751050753",
-		"inCall": false,
-		"noDelete": false,
-		"wwtbam": false
 	}
 ]
