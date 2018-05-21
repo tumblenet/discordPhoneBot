@@ -16,5 +16,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
+	},
+	{
+		"id": "YlGmHh",
+		"name": "WhoWantsToBeAMillionare<#445367602240552960>",
+		"guild": "445354780873850881",
+		"channel": "445367602240552960",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
