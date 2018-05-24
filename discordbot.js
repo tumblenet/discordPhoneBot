@@ -10,9 +10,9 @@ const OWNER_ID = "336869008148135948";
 const WWTBAM_PID = "wwtbampaf";
 const INVITE_LINK = "http://tnphone.tumblenet.ga";
 
-var LISTENER_SERVER;
-var LISTENER_CHANNEL;
-var LISTENER_COUNTDOWN;
+const LISTENER_SERVER;
+const LISTENER_CHANNEL;
+const LISTENER_COUNTDOWN;
 
 var phones = [];
 var calls = [];
