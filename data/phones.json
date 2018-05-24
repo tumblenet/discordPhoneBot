@@ -16,5 +16,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
+	},
+	{
+		"id": "3cFs2g",
+		"name": "Brown \"Strike\" Squad [PRTM]<#447804205156139029>",
+		"guild": "447796624698376193",
+		"channel": "447804205156139029",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
