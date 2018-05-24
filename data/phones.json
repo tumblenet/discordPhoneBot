@@ -16,14 +16,5 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
-	},
-	{
-		"id": "7KBIps",
-		"name": "<p> Lodi's Discord </p><#430395763600916480>",
-		"guild": "406656930510143488",
-		"channel": "430395763600916480",
-		"inCall": false,
-		"noDelete": false,
-		"wwtbam": false
 	}
 ]
