@@ -10,10 +10,6 @@ const OWNER_ID = "336869008148135948";
 const WWTBAM_PID = "wwtbampaf";
 const INVITE_LINK = "http://tnphone.tumblenet.ga";
 
-const LISTENER_SERVER;
-const LISTENER_CHANNEL;
-const LISTENER_COUNTDOWN;
-
 var phones = [];
 var calls = [];
 
@@ -253,34 +249,6 @@ client.on('message', message => {
       }
       message.reply("I am on " + client.guilds.array().length + " servers.\n\n__**List of Servers I am on**__\n```" + client.guilds.map(guild=>guild.name).join("\n") + "```")
     }
-    if (message.content.startsWith("=ownermsg ")) {
-      var param = message.content.split(" ");
-      param.shift();
-      if (client.guilds == 0) {
-          message.channel.send("There are no Servers.");
-          return;
-      }
-      var guild = client.guilds.array()[param.shift()];
-      GetPhone(guild, guild.defaultChannel,(phone)=>{
-        if (phone.blockOwnerMsg) {
-          message.send("This channel has blocked Owner Message.");
-          return;
-        }
-        channel.send("Owner:" + param.join(" "));
-      })
-    }
-    if (message.content.startsWith("=listen ")) {
-      var param = message.content.split(" ");
-      param.shift();
-      if (client.guilds == 0) {
-          message.channel.send("There are no Servers.");
-          return;
-      }
-      var guild = client.guilds.array()[parseInt(param.shift())]
-      LISTENER_COUNTDOWN = 5;
-      LISTENER_SERVER = guild.id;
-      LISTENER_CHANNEL = guild.defaultChannel.id;
-    }
     if (message.content == "=calls") {
       if (calls.length == 0) {
           message.channel.send("There are no calls");
@@ -298,18 +266,6 @@ client.on('message', message => {
         message.channel.send("`" + phone.id + "` " + phone.name);
       })
       return;
-    }
-  }
-  if (LISTENER_COUNTDOWN != 0) {
-    LISTENER_COUNTDOWN--;
-    if (message.guild.id == LISTENER_SERVER) {
-      if (message.channel.id == LISTENER_CHANNEL) {
-        var sendertext = "**" + message.member.user.tag + "**";
-        if (call.members.length > 2) {
-          sendertext = "**[" + sender.name +  "] " + message.member.user.tag + "**";
-        }
-        client.users.get(OWNER_ID).send(sendertext + ": " +  message.content);
-      }
     }
   }
 

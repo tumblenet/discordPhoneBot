@@ -6,7 +6,6 @@ function Phone(id, guild, channel, name) {
   this.inCall = false;
   this.noDelete = false;
   this.wwtbam = false;
-  this.blockSay = false;
 
   console.log("Phone Created: " + this.guild + ", " + this.channel);
 }
