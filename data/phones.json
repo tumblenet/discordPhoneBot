@@ -18,20 +18,11 @@
 		"wwtbam": true
 	},
 	{
-		"id": "3aXx4o",
-		"name": "Tumble Network<#338023793333239809>",
-		"guild": "337887798889545728",
-		"channel": "338023793333239809",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
-	},
-	{
 		"id": "7KBIps",
 		"name": "<p> Lodi's Discord </p><#430395763600916480>",
 		"guild": "406656930510143488",
 		"channel": "430395763600916480",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": false,
 		"wwtbam": false
 	}
