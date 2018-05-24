@@ -247,7 +247,7 @@ client.on('message', message => {
           message.channel.send("There are no Servers.");
           return;
       }
-      message.reply("I am on " + client.guilds.array().length + " servers.\n\n__**List of Servers I am on**__\n```" + client.guilds.map(guild=>guild.name).join("/n") + "```")
+      message.reply("I am on " + client.guilds.array().length + " servers.\n\n__**List of Servers I am on**__\n```" + client.guilds.map(guild=>guild.name).join("\n") + "```")
     }
     if (message.content == "=calls") {
       if (calls.length == 0) {
