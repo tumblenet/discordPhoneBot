@@ -244,7 +244,7 @@ client.on('message', message => {
     message.reply("Use this link to add me on your server: " + INVITE_LINK  )
     return;
   }
-  if (message.user.id == OWNER_ID) {
+  if (message.author.id == OWNER_ID) {
     if (message.content == "=servers") {
       if (client.guilds == 0) {
           message.channel.send("There are no Servers.");
@@ -273,7 +273,7 @@ client.on('message', message => {
   }
 
   GetPhone(message.guild,message.channel,phone => {
-    if (message.user = OWNER_ID) {
+    if (message.author.id = OWNER_ID) {
       if (message.content.startsWith("=phone")) {
         var paramsText = message.content.replace("=phone ","");
         var params = paramsText.split(" ");
