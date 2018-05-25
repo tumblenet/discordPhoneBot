@@ -214,7 +214,7 @@ client.on('ready', () => {
     callsMade = data.callsMade || 0;
   });
   setInterval(() => {
-    Saving.SavePhoneData({phones:phones,callsMade:callsMade,servers:client.guilds.array().length,currenetCalls:calls.length});
+    Saving.SavePhoneData({phones:phones,callsMade:callsMade,servers:client.guilds.array().length,currentCalls:calls.length});
   },6000);
 });
 
