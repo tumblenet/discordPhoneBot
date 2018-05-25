@@ -239,7 +239,7 @@ client.on('message', message => {
   //if not in a call
     //detect if user asked to call
     if (message.content == "=help") {
-      message.reply("**Commands**\n```\n=call - Make a call\n=call [name] - Join a specific call\n=calls - See Active Calls\n=hangup - Disconnect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n```\nNeed any specific help?: https://discord.gg/TWbkwT9")
+      message.reply("**Commands**\n```\n=call - Make a call\n=call [name] - Join a specific call\n=calls - See Active Calls\n=hangup - Disconnect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n=wwtbam [phone name(voters only)] - put this phone in Who wants to be a Millionare Phone a Friend reciver mode\n```\nNeed any specific help?: https://discord.gg/TWbkwT9")
       return;
     }
   if (message.content == "=owner") {
@@ -318,8 +318,21 @@ client.on('message', message => {
         }
       }
     }
-    if (message.content == "=wwtbam") {
-      if (message.member.hasPermission(Discord.Permissions.FLAGS.ADMINISTRATOR,null,true,true)) {
+    if (message.content.startsWith("=wwtbam")) {
+      if (message.member.hasPermission("MANAGE_CHANNELS",null,true,true)) {
+        var paramsText = message.content;
+        var params = paramsText.split(" ");
+        params.shift();
+        var name = params.shift()
+        if (name != undefined) {
+          dbl.hasVoted(member.author.id).then(voted => {
+            if (!voted) {
+              message.reply("Naming the phone is only available if you have voted.");
+              return;
+            }
+            phone.id = name;
+          });
+        }
         phone.noDelete = !phone.wwtbam;
         phone.wwtbam = !phone.wwtbam;
         if (phone.wwtbam) {
@@ -328,7 +341,7 @@ client.on('message', message => {
           message.channel.send("This is now a normal phone, ringing out is now possible.")
         }
       } else {
-        message.reply("Only admins can run this command")
+        message.reply("You need the permission to `MANAGE_CHANNELS` to run this command");
       }
     }
     if (phone.inCall) {
@@ -341,8 +354,11 @@ client.on('message', message => {
           }
           if (message.content == "=hangup") {
             SendText(phone, call, phone.name + " Disconnected");
-            SendText(phone, call, "How ever you are still in a call and will need to `=hangup` to leave.");
             call.leave(phone);
+            if (call.members.length > 1) {
+              SendText(phone, call, "How ever you are still in a call and will need to `=hangup` to leave.");
+            }
+            message.channel.send("Disconnected");
             if (call.members.length == 1) {
               GetOtherEnd(phone, call, otherEnd => {
                 call.leave(otherEnd);
@@ -354,8 +370,8 @@ client.on('message', message => {
                 if (index > -1) {
                   calls.splice(index, 1);
                 }
+                message.channel.send("Call closed.");
             }
-            message.channel.send("Disconnected");
             if (!phone.noDelete) {
               var index = phones.indexOf(phone);
               if (index > -1) {
