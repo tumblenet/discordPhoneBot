@@ -219,13 +219,13 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+  if (message.member.bot) {
+    return;
+  }
   if (message.type != "DEFAULT") {
     return;
   }
   if (message.guild == undefined) {
-    return;
-  }
-  if (message.member == message.guild.me) {
     return;
   }
 
