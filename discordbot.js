@@ -215,6 +215,9 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+  if (message.type != "DEFAULT") {
+    return;
+  }
   if (message.guild == undefined) {
     return;
   }
