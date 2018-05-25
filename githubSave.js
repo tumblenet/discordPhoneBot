@@ -31,6 +31,19 @@ var options = {
   encode: true // Whether to base64 encode the file. (default: true)
 }
 
+function LoadPhones(cb) {
+  request({
+    url: "https://raw.githubusercontent.com/tumblenet/tn-phone-website/master/_data/phones.json",
+    json: true,
+    followAllRedirects: true
+  }, function (error, response, body) {
+
+    if (!error && response.statusCode === 200) {
+      cb(body);
+    }
+  });
+}
+
 
 
 function SavePhones(data, cb) {
@@ -49,5 +62,6 @@ function SavePhones(data, cb) {
 }
 
 module.exports = {
-  SavePhones:SavePhones
+  SavePhones:SavePhones,
+  LoadPhones:LoadPhones
 };

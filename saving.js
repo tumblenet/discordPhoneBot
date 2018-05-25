@@ -4,12 +4,15 @@ const githubSave = require('./githubSave.js');
 var phonesFile = __dirname + "/data/phones.json";
 
 function LoadPhoneData(callback=function (data) {}) {
-  fs.readFile(phonesFile,(err,data) => {
-    if (err | data == "") {
-      return data;
-    }
-    var phonedata = JSON.parse(data);
-    callback(phonedata);
+  // fs.readFile(phonesFile,(err,data) => {
+  //   if (err | data == "") {
+  //     return data;
+  //   }
+  //   var phonedata = JSON.parse(data);
+  //   callback(phonedata);
+  // });
+  githubSave.LoadPhones(data =>{
+    callback(data);
   });
 }
 
