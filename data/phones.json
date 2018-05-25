@@ -34,14 +34,5 @@
 		"inCall": true,
 		"noDelete": false,
 		"wwtbam": false
-	},
-	{
-		"id": "r8cIfV",
-		"name": "Discord Server 3<#449543766467018755>",
-		"guild": "449543766467018753",
-		"channel": "449543766467018755",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
 	}
 ]
