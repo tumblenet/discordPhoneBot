@@ -16,5 +16,14 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
+	},
+	{
+		"id": "bRg7SE",
+		"name": "Mr. Kamenko<#448481927620591628>",
+		"guild": "447439557399543808",
+		"channel": "448481927620591628",
+		"inCall": true,
+		"noDelete": false,
+		"wwtbam": false
 	}
 ]
