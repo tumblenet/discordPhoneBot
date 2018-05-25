@@ -138,6 +138,7 @@ function GetCall(phone, callback) {
   if (!found) {
     var id = makeID(callIdExists);
     var call = new Call(id,phone);
+    callsMade++;
     calls.push(call);
     callback(call);
     return;
@@ -213,7 +214,7 @@ client.on('ready', () => {
     callsMade = data.callsMade || 0;
   });
   setInterval(() => {
-    Saving.SavePhoneData({phones:phones,callsMade:callsMade});
+    Saving.SavePhoneData({phones:phones,callsMade:callsMade,servers:client.guilds.array().length,currnetCalls:calls.length});
   },6000);
 });
 
@@ -465,7 +466,7 @@ client.on('message', message => {
 
 
 app.get("/api",function (req,res) {
-  res.send({servers:client.guilds.array().length,currnetCalls:calls.length})
+  res.send({})
 })
 
 
