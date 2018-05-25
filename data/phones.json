@@ -22,16 +22,7 @@
 		"name": "Discord Server 1<#449543521481916419>",
 		"guild": "449543521481916416",
 		"channel": "449543521481916419",
-		"inCall": true,
-		"noDelete": false,
-		"wwtbam": false
-	},
-	{
-		"id": "8knYc5",
-		"name": "Discord Server 2<#449543595515445252>",
-		"guild": "449543595515445250",
-		"channel": "449543595515445252",
-		"inCall": true,
+		"inCall": false,
 		"noDelete": false,
 		"wwtbam": false
 	}
