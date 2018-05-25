@@ -16,14 +16,5 @@
 		"inCall": false,
 		"noDelete": true,
 		"wwtbam": true
-	},
-	{
-		"id": "IKGhK3",
-		"name": "Discord Server 1<#449543521481916419>",
-		"guild": "449543521481916416",
-		"channel": "449543521481916419",
-		"inCall": false,
-		"noDelete": false,
-		"wwtbam": false
 	}
 ]
