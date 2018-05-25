@@ -238,16 +238,20 @@ client.on('message', message => {
       //send message to other channel
   //if not in a call
     //detect if user asked to call
-    if (message.content == "=help") {
-      message.reply("**Commands**\n```\n=call - Make a call\n=call [name] - Join a specific call\n=calls - See Active Calls\n=hangup - Disconnect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n=wwtbam [phone name(voters only)] - put this phone in Who wants to be a Millionare Phone a Friend reciver mode\n```\nNeed any specific help?: https://discord.gg/TWbkwT9")
-      return;
-    }
+  if (message.content == "=help") {
+    message.reply("**Commands**\n```\n=call - Make a call\n=call [name] - Join a specific call\n=calls - See Active Calls\n=hangup - Disconnect from current call\n=invite - put this phone on your own server\n=members - see members of this call\n=wwtbam [phone name(voters only)] - put this phone in Who wants to be a Millionare Phone a Friend reciver mode\n=vote - vote for the bot\n```\nNeed any specific help?: https://discord.gg/TWbkwT9")
+    return;
+  }
   if (message.content == "=owner") {
     message.channel.send("The owner of this bot is <@" + OWNER_ID + ">")
     return;
   }
   if (message.content == "=invite") {
     message.reply("Use this link to add me on your server: " + INVITE_LINK  )
+    return;
+  }
+  if (message.content == "=vote") {
+    message.channel.send("To vote see here https://discordbots.org/bot/446367231740215317/vote")
     return;
   }
   if (message.author.id == OWNER_ID) {
