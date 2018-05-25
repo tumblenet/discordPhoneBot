@@ -241,7 +241,7 @@ client.on('message', message => {
     message.reply("Use this link to add me on your server: " + INVITE_LINK  )
     return;
   }
-  if (message.member.id == OWNER_ID) {
+  if (message.user.id == OWNER_ID) {
     if (message.content == "=servers") {
       if (client.guilds == 0) {
           message.channel.send("There are no Servers.");
