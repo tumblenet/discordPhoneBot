@@ -11,6 +11,7 @@ const OWNER_ID = "336869008148135948";
 const WWTBAM_PID = "wwtbampaf";
 const INVITE_LINK = "http://tnphone.tumblenet.ga";
 
+var callsMade = 0;
 var phones = [];
 var calls = [];
 
@@ -208,10 +209,11 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: 'Type =help for commands' }, status: 'online' })
 
   Saving.LoadPhoneData(function (data) {
-    phones = data;
+    phones = data.phones;
+    callsMade = data.callsMade || 0;
   });
   setInterval(() => {
-    Saving.SavePhoneData(phones);
+    Saving.SavePhoneData({phones:phones,callsMade:callsMade});
   },6000);
 });
 
@@ -463,7 +465,7 @@ client.on('message', message => {
 
 
 app.get("/api",function (req,res) {
-  res.send({servers:client.guilds.array().length})
+  res.send({servers:client.guilds.array().length,currnetCalls:calls.length})
 })
 
 

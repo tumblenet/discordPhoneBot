@@ -11,7 +11,7 @@ var github = new Github({
 
 function UpdateLast() {
   request({
-    url: "https://raw.githubusercontent.com/tumble1999/discordPhoneBot/master/data/phones.json",
+    url: "https://raw.githubusercontent.com/tumblenet/tn-phone-website/master/_data/phones.json",
     json: true,
     followAllRedirects: true
   }, function (error, response, body) {
@@ -22,7 +22,7 @@ function UpdateLast() {
   });
 }
 
-var repo = github.getRepo("tumble1999", "discordPhoneBot");
+var repo = github.getRepo("tumblenet", "tn-phone-website");
 UpdateLast();
 
 var options = {
@@ -41,7 +41,7 @@ function SavePhones(data, cb) {
   if (JSON.stringify(lastData, null, '\t') == JSON.stringify(data, null, '\t')) {
     callback("phones is already up to date")
   } else {
-    repo.writeFile('master', 'data/phones.json', JSON.stringify(data, null, '\t'), 'Update Phones feed', options,
+    repo.writeFile('master', '_data/phones.json', JSON.stringify(data, null, '\t'), 'Update Phones feed', options,
     function(error,request,result) {
       callback(error ? "There was an error in updateing phones data" : "phones data was updated");
     })
