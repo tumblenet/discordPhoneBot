@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const app = require('./app.js');
 
 const Saving = require('./saving.js');
 
@@ -460,4 +461,12 @@ client.on('message', message => {
   });
 });
 
-module.exports = client;
+
+app.get("/api",function (req,res) {
+  res.send({servers:client.guilds.array().length})
+})
+
+
+
+
+module.exports = {client:client,app:app};
