@@ -8,4 +8,4 @@ discordbot.app.use('/log',logApp);
 
 var token = process.env.DISCORD_TOKEN || require("./config/token.js").token;
 
-//discordbot.login(token);
+discordbot.client.login(token);
