@@ -283,7 +283,7 @@ client.on('message', message => {
   }
 
   GetPhone(message.guild,message.channel,phone => {
-    if (message.author.id = OWNER_ID) {
+    if (message.author.id == OWNER_ID) {
       if (message.content.startsWith("=phone")) {
         var paramsText = message.content.replace("=phone ","");
         var params = paramsText.split(" ");
