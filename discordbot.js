@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const DBL = require("dblapi.js");
-const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0NjM2NzIzMTc0MDIxNTMxNyIsImJvdCI6dHJ1ZSwiaWF0IjoxNTI3MjY2ODI4fQ.RSJQP_axeFoacY5mB9mxAracnD4DHoeM9a76TdP0I04', client);
+const dbl = new DBL(process.env.DBL_TOKEN || require("./config/token.js").dblToken, client);
 const app = require('./app.js');
 
 const Saving = require('./saving.js');
@@ -489,7 +489,7 @@ client.on('message', message => {
 
 app.get("/api",function (req,res) {
   res.send({})
-})
+});
 
 
 
