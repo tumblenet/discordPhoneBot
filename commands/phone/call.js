@@ -10,10 +10,13 @@ class CallCommand extends Command {
             memberName: 'call',
             description: 'Creates or joins a call.',
             examples: ['call','call the-greatest-meeting','call nose'],
-            guildOnly: true
+            guildOnly: true,
             args:[{
               key: "callId",
-              label: "Call ID"
+              label: "Call ID",
+              prompt:"Prompt for call id argument",
+              type: "string",
+              default: "",
             }],
             argsCount: 1
         });
@@ -38,10 +41,11 @@ class CallCommand extends Command {
           });
         }
       }
-      if (args=="") {
+      var id = args.callId
+      if (id=="") {
         data.getCall(phone,handleCall)
       } else {
-        data.getCallID(phone,args,handleCall)
+        data.getCallID(phone,id,handleCall)
       }
       data.disposePhone(phone);
     });

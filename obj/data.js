@@ -127,7 +127,6 @@ class Data {
     }
   }
 
-
   //TODO:DEPRICATE ------------------------------------
 
   getOtherEnd(sender, call, callback) {
