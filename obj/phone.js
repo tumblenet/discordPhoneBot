@@ -4,7 +4,6 @@ class Phone {
     this.name = name;
     this.guildId = guildId;
     this.channelId = channelId;
-    this.callId = null;
     this.noDelete = false;
     this.wwtbam = false;
 

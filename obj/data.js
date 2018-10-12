@@ -119,7 +119,7 @@ class Data {
   }
 
   disposePhone(phone) {
-    if ((phone.callId != null) && !phone.noDelete) {
+    if (phone.inCall && !phone.noDelete) {
       var index = this.phones.indexOf(phone);
       if (index > -1) {
         this.phones.splice(index, 1);
@@ -129,7 +129,7 @@ class Data {
 
 
   //TODO:DEPRICATE ------------------------------------
-  
+
   getOtherEnd(sender, call, callback) {
     call.members.forEach(member => {
       if (member != sender) {
