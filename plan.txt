@@ -1,0 +1,26 @@
+
+
+PHONE
+=members - IN CALL
+=hangup - IN CALL
+=call [call name] - NOT IN CALL
+
+WWTBAM
+!paf
+
+SETTINGS
+=wwtbam - server owner
+=phone - owner
+ - setid [new-id]
+ - nodelete
+ - wwtbam
+
+STATS
+=servers - owner
+=calls - owner
+=phones - owner
+=owner
+
+MISC
+=help
+=invite
