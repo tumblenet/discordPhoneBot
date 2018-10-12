@@ -7,7 +7,7 @@ class Tools {
   getGuild(guildid,callback) {
     console.log("Finding guild: " + guildid);
     var found = false;
-    client.guilds.forEach(guild => {
+    this.client.guilds.forEach(guild => {
       if (found) {
         return;
       }

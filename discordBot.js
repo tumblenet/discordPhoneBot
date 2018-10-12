@@ -27,10 +27,25 @@ client.on('ready', ()=> {
   client.user.setActivity('Calls',{type:"LISTENING"});
 });
 
-/*client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
+client.on('message', message => {
+  if (message.author.bot) {
+    return;
   }
-});*/
+  if (message.type != "DEFAULT") {
+    return;
+  }
+  if (message.guild == undefined) {
+    return;
+  }
+  var data = message.client.data;
+  data.getPhone(message.guild, message.channel, phone => {
+    if (phone.inCall) {
+      data.getCall(phone, call => {
+        data.sendMessage(phone, call, message);
+      });
+      return;
+    }
+  });
+});
 
 module.exports = client;

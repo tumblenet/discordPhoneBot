@@ -129,8 +129,7 @@ class Data {
 
 
   //TODO:DEPRICATE ------------------------------------
-
-  // @deprecated
+  
   getOtherEnd(sender, call, callback) {
     call.members.forEach(member => {
       if (member != sender) {
@@ -139,7 +138,6 @@ class Data {
     });
   }
 
-  // @deprecated
   sendText(sender, call, text, client) {
     call.members.forEach(member => {
       if (member != sender) {
@@ -153,7 +151,6 @@ class Data {
       }
     });
   }
-
   sendMessage(sender, call, message) {
     call.members.forEach(member => {
       if (member != sender) {
