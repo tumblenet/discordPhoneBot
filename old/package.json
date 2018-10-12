@@ -1,0 +1,29 @@
+{
+  "name": "discordphonebot",
+  "version": "1.0.0",
+  "description": "phone test",
+  "main": "index.js",
+  "dependencies": {
+    "dblapi.js": "^2.0.1",
+    "discord.js": "^11.3.2",
+    "github-api": "^3.0.0",
+    "request": "^2.86.0",
+    "webserver": "github:tumblenet/webserver",
+    "webserver-log": "github:tumblenet/webserver-log"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tumble1999/discordPhoneBot.git"
+  },
+  "author": "tumble1999",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tumble1999/discordPhoneBot/issues"
+  },
+  "homepage": "https://github.com/tumble1999/discordPhoneBot#readme"
+}
