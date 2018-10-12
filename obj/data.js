@@ -1,5 +1,6 @@
 const Tools = require('../tools.js');
 const Phone = require('./phone.js');
+const Call = require('./call.js');
 
 class Data {
   constructor() {
@@ -89,7 +90,7 @@ class Data {
     if (!found) {
       var id = Tools.MakeID(this);
       var call = new Call(id,phone);
-      callsMade++;
+      this.callsMade++;
       this.calls.push(call);
       callback(call);
       return;
@@ -125,6 +126,52 @@ class Data {
       }
     }
   }
+
+
+  //TODO:DEPRICATE ------------------------------------
+
+  // @deprecated
+  getOtherEnd(sender, call, callback) {
+    call.members.forEach(member => {
+      if (member != sender) {
+        callback(member);
+      }
+    });
+  }
+
+  // @deprecated
+  sendText(sender, call, text, client) {
+    call.members.forEach(member => {
+      if (member != sender) {
+        var tools = new Tools(client);
+        tools.getGuild(member.guild, guild =>{
+          tools.getChannel(guild, member.channel, channel => {
+            console.log("Sending \"" + text + "\"  from " + sender.name + " to " + member.name + " via " + call.getName());
+            channel.send(text);
+          });
+        });
+      }
+    });
+  }
+
+  sendMessage(sender, call, message) {
+    call.members.forEach(member => {
+      if (member != sender) {
+        var tools = new Tools(message.client);
+        tools.getGuild(member.guild, guild =>{
+          tools.getChannel(guild, member.channel, channel => {
+            console.log("Sending \"" + message.content + "\" from " + sender.name + " to " + member.name + " via " + call.getName());
+            var sendertext = "**" + message.member.user.tag + "**";
+            if (call.members.length > 2) {
+              sendertext = "**[" + sender.name +  "] " + message.member.user.tag + "**";
+            }
+            channel.send(sendertext + ": " +  message.content);
+          });
+        });
+      }
+    });
+  }
+  //---------------------------------------------------------------
 }
 
 module.exports = Data;

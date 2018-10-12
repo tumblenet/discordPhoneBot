@@ -23,9 +23,9 @@ class CallCommand extends Command {
         if (call.members.length == 1) {
           message.channel.send("Waiting for Answer")
         } else {
-          SendText(phone, call, phone.name + " has joined the call");
-          SendText(phone, call, "Use `=hangup` to leave");
-          GetOtherEnd(phone, call, otherEnd => {
+          data.sendText(phone, call, phone.name + " has joined the call",message.client);
+          data.sendText(phone, call, "Use `=hangup` to leave",message.client);
+          data.getOtherEnd(phone, call, otherEnd => {
             message.channel.send("Connected to " + otherEnd.name);
             message.channel.send("Use `=hangup` to leave");
           });
