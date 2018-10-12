@@ -6,8 +6,10 @@ const Data = require('./obj/data.js');
 
 const client = new Commando.Client({
   commandPrefix: '=t',
-  owner:'336869008148135948',
-  disableEveryone: true
+  owner:['336869008148135948','339389188787142656'],
+  disableEveryone: true,
+  unknownCommandResponse: false,
+  invite: "https://discord.gg/TWbkwT9"
 });
 
 client.registry
@@ -37,7 +39,7 @@ client.on('message', message => {
   if (message.guild == undefined) {
     return;
   }
-  var data = message.client.data;
+  var data = client.data;
   data.getPhone(message.guild, message.channel, phone => {
     if (phone.inCall) {
       data.getCall(phone, call => {
