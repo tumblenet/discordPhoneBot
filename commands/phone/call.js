@@ -9,8 +9,13 @@ class CallCommand extends Command {
             group: 'phone',
             memberName: 'call',
             description: 'Creates or joins a call.',
-            examples: ['call'],
+            examples: ['call','call the-greatest-meeting','call nose'],
             guildOnly: true
+            args:[{
+              key: "callId",
+              label: "Call ID"
+            }],
+            argsCount: 1
         });
   }
 
@@ -23,13 +28,15 @@ class CallCommand extends Command {
         message.channel.send("Joined " + call.getName() + " Call Name:`" + call.id + "`");
         if (call.members.length == 1) {
           message.channel.send("Waiting for Answer")
-        } else {
+        }
+        else {
           data.sendText(phone, call, phone.name + " has joined the call", message.client);
           data.sendText(phone, call, "Use `=hangup` to leave", message.client);
           data.getOtherEnd(phone, call, otherEnd => {
             message.channel.send("Connected to " + otherEnd.name);
             message.channel.send("Use `=hangup` to leave");
           });
+        }
       }
       if (args=="") {
         data.getCall(phone,handleCall)
@@ -39,7 +46,5 @@ class CallCommand extends Command {
       data.disposePhone(phone);
     });
   }
-
-  call
 }
  module.exports = CallCommand;
