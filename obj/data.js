@@ -119,7 +119,7 @@ class Data {
   }
 
   disposePhone(phone) {
-    if (phone.inCall && !phone.noDelete) {
+    if (!phone.inCall && !phone.noDelete) {
       var index = this.phones.indexOf(phone);
       if (index > -1) {
         this.phones.splice(index, 1);
