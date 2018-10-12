@@ -15,10 +15,11 @@ class CallCommand extends Command {
   }
 
   run(message,args) {
+    console.log(args);
     var data = message.client.data;
     data.getPhone(message.guild, message.channel, phone => {
       message.channel.send(`Phone Name: ${phone.name}`);
-      data.getCall(phone, call => {
+      var handleCall = call => {
         message.channel.send("Joined " + call.getName() + " Call Name:`" + call.id + "`");
         if (call.members.length == 1) {
           message.channel.send("Waiting for Answer")
@@ -29,11 +30,16 @@ class CallCommand extends Command {
             message.channel.send("Connected to " + otherEnd.name);
             message.channel.send("Use `=hangup` to leave");
           });
-          return;
-        }
-      });
+      }
+      if (args=="") {
+        data.getCall(phone,handleCall)
+      } else {
+        data.getCallID(phone,args,handleCall)
+      }
       data.disposePhone(phone);
     });
   }
+
+  call
 }
  module.exports = CallCommand;
