@@ -127,6 +127,22 @@ class Data {
     }
   }
 
+  updateActivity(client) {
+    var activies = [() => {
+      client.user.setActivity(`on ${client.guilds.array().length} Servers`,{type:"PLAYING"});
+    },() => {
+      client.user.setActivity(`${this.calls.length} Calls`,{type:"LISTENING"});
+    },() => {
+      client.user.setActivity(`${this.phones.length} phones`,{type:"WATCHING"});
+    },() => {
+      client.user.setActivity(`Type ${client.options.commandPrefix}help for commands`,{type:"PLAYING"});
+    }];
+    var i = Math.floor(Math.random() * activies.length);
+    //i = 1;
+    activies[i]();
+}
+
+
   //TODO:DEPRICATE ------------------------------------
 
   getOtherEnd(sender, call, callback) {

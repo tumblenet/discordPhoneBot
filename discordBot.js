@@ -26,10 +26,13 @@ client.registry
 client.on('ready', ()=> {
   console.log(`Logged in as ${client.user.tag}`);
   client.data = new Data();
-  client.user.setActivity('Calls',{type:"LISTENING"});
+  //client.user.setActivity('Calls',{type:"LISTENING"});
+  client.data.updateActivity(client);
 });
 
 client.on('message', message => {
+  var data = client.data;
+  data.updateActivity(client);
   if (message.author.bot) {
     return;
   }
@@ -39,7 +42,6 @@ client.on('message', message => {
   if (message.guild == undefined) {
     return;
   }
-  var data = client.data;
   data.getPhone(message.guild, message.channel, phone => {
     if (phone.inCall) {
       data.getCall(phone, call => {
