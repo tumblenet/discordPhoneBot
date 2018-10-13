@@ -16,6 +16,8 @@ client.registry
     // Registers your custom command groups
     .registerGroups([
         ['phone', 'Phone Commands'],
+        ['settings','Settings'],
+        ['stats','Statistics']
     ])
     // Registers all built-in groups, commands, and argument types
     .registerDefaults()
