@@ -34,8 +34,6 @@ class Tools {
   }
 }
 
-
-
 Tools.MakeID = function(data) {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
