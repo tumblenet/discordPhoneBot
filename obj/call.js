@@ -1,6 +1,5 @@
 /**
- * Class rep56resenting a caller45678i9op[]
- asdcfvbnm,./
+ * Class representing a call
  * @typedef Call
  * @type {Object}
  * @property {string} id
