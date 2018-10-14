@@ -4,7 +4,7 @@ const Command = Tools.commandsBase.command;
 
 class CallsCommand extends Command {
   constructor(client) {
-    super(client,{
+    super(client, {
       name: 'calls',
       group: 'stat',
       memberName: 'calls',
@@ -12,11 +12,11 @@ class CallsCommand extends Command {
       examples: ['calls'],
       ownerOnly: true
     });
+  }
 
-    run(message,args) {
-      var callsArray = message.client.data.calls;
-      var callsList = Tools.displayList(callsArray,i=>i.getName(), `__**List of current calls (${callsArray.size} calls)**__`);
-      message.replay(callsList);
-    }
+  run(message,args) {
+    var callsArray = message.client.data.calls;
+    var callsList = Tools.displayList(callsArray,i=>i.getName(), `__**List of current calls (${callsArray.size} calls)**__`);
+    message.replay(callsList);
   }
 }

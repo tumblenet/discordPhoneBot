@@ -34,6 +34,35 @@ class Tools {
   }
 }
 
+Tools.Depricate(oldValue,msg="Something has depricated.", solutions = "No alternative has been provided to use") {
+  var warningMsg = msg + " ";
+  var finishUp = () {
+    warningMsg.append(" instead.");
+    process.emitWarning(
+      warningMsg,
+      'DeprecationWarning'
+    );
+  }
+
+  if (Array.isArray(solutions)) {
+    solutions.forEach((solution,i,array){
+      if (i==0) {
+        warningMsg.append(`Use \`${solution}\`, or preferably`)
+      } elseif (i==array.length-1) {
+        warningMsg.append(` or \`${solution}\``);
+      } else {
+        warningMsg.append(`, \`${solution}\``);
+        finishUp();
+      }
+    });
+  } else {
+    warningMsg.append(`Use \`${solutions}\``);
+    finishUp();
+  }
+
+  return oldValue;
+}
+
 Tools.MakeID = function(data) {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -58,4 +87,9 @@ Tools.DisplayList = function(array, map, title="") {
   }
 }
 Tools.CommandBases = require("./commandBases");
+
+/** @deprecated use Tools.DisplayList instead **/
+Tools.displayList = Tools.DisplayList;
+/** @deprecated use Tools.CommandBases instead **/
+Tools.commandsBase = require("./commandBases");
 module.exports = Tools;

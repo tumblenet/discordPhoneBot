@@ -1,6 +1,6 @@
 const Tools = require('../../tools.js');
 
-const Command = Tools.commandsBase.phone
+const Command = Tools.CommandBases.Phone
 
 class HangupCommand extends Command {
   constructor(client) {
