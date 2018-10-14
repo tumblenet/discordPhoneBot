@@ -1,9 +1,9 @@
-const Tools = require('../../tools.js');
+const Tools = require('../tools.js');
 
-const Command = Tools.commandsBase.command;
+const Command = Tools.CommandsBases.command;
 
 class PhoneCommand extends Command {
-  run(message,args, inCall,callback){
+  run(message, args, inCall, callback){
     var data = message.client.data;
     if (inCall==PhoneCommand.IN_CALL.DOESNT_MATTER) {
       callback(message,args,data,phone);
@@ -24,9 +24,17 @@ class PhoneCommand extends Command {
   }
 }
 
+/**
+ * Enum for what state of call to check for
+ * @readonly
+ * @enum {number}
+ */
 PhoneCommand.IN_CALL = {
+  /** callback no matter what */
   DOESNT_MATTER:0,
+  /** callback if phone.inCall */
   YES:1,
+  /** callback if !phone.inCall */
   NO:2
 }
 

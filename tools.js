@@ -46,7 +46,7 @@ Tools.MakeID = function(data) {
   return text;
 }
 
-Tools.displayList = function(array, map, title="") {
+Tools.DisplayList = function(array, map, title="") {
 
   var wrapper = "```"
   var list = array.map(map).join("\n");
@@ -57,5 +57,5 @@ Tools.displayList = function(array, map, title="") {
     return title + "\n" + body;
   }
 }
-Tools.commandsBase = require("./commandsBase");
+Tools.CommandBases = require("./commandBases");
 module.exports = Tools;
