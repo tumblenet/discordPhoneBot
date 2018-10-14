@@ -1,6 +1,6 @@
-const Commando = require('discord.js-commando');
+const Tools = require('../../tools.js');
 
-const Command = Commando.Command;
+const Command = Tools.commandsBase.phone
 
 class CallCommand extends Command {
   constructor(client) {
@@ -23,9 +23,7 @@ class CallCommand extends Command {
   }
 
   run(message,args) {
-    console.log(args);
-    var data = message.client.data;
-    data.getPhone(message.guild, message.channel, phone => {
+    super.run(message,args,Command.IN_CALL.NO,(message, args, data, phone)=>{
       message.channel.send(`Phone Name: ${phone.name}`);
       var handleCall = call => {
         message.channel.send("Joined " + call.getName() + " Call Name:`" + call.id + "`");

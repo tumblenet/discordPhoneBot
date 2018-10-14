@@ -1,6 +1,6 @@
-const Commando = require('discord.js-commando');
+const Tools = require('../../tools.js');
 
-const Command = Commando.Command;
+const Command = Tools.commandsBase.phone
 
 class MembersCommand extends Command {
   constructor(client) {
@@ -14,15 +14,11 @@ class MembersCommand extends Command {
         });
   }
 
-  run(message,args){
-    var data = message.client.data;
-    data.getPhone(message.guild, message.channel, phone => {
-      if (phone.inCall) {
-        data.getCall(phone, call => {
-          var memberList = `\n__**List of members in (${call.getName()})**__\`\`\`` + call.members.map(i=>i.name).join("/n") + "```";
-          message.reply(memberList);
-        });
-      }
+  run(message,args) {
+    super.run(message,args,data,Command.IN_CALL.YES,(message,args,data,phone,call)=>{
+        var title = `\n__**List of members in current call**__`;
+        var memberList = Tools.displayList(call.members,i=>i.name,title);
+        message.reply(memberList);
     });
   }
 }
