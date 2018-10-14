@@ -1,6 +1,6 @@
-const Commando = require('discord.js-commando');
+const Tools = require('../../tools.js');
 
-const Command = Commando.Command;
+const Command = Tools.commandsBase.command;
 
 class PhoneCommand extends Command {
   run(message,args, inCall,callback){

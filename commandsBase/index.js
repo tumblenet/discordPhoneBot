@@ -1,4 +1,6 @@
+const Commando = require('discord.js-commando');
+
 module.exports = {
-  command:require("discord.js-commando").Command,
-  phone:require("./phone.js")
+  command: Commando.Command,
+  phone: require("./phone.js")
 };

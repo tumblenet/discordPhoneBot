@@ -6,17 +6,19 @@ class ServersCommand extends Command {
   constructor(client) {
     super(client,{
       name: 'servers',
-      group: 'stats',
+      group: 'stat',
       memberName: 'servers',
-      description: 'Listes the servers I am in',
+      description: 'Lists the servers I am in',
       examples: ['servers'],
       ownerOnly: true
     });
   }
 
-  run(messgae,args) {
-    var serverListArray = client.guilds;
-    var serverList = Tools.displayList(serverListArray,i=>i.name,`__**List of Servers I'm In (${serverListArray.toArray().length} Servers)**__`);
+  run(message, args) {
+    var serverArray = message.client.guilds;
+    var serverList = Tools.displayList(serverArray,i=>i.name,`__**List of Servers I'm In (${serverArray.size} Servers)**__`);
     message.reply(serverList)
   }
 }
+
+module.exports = ServersCommand;
