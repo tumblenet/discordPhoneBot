@@ -34,29 +34,33 @@ class Tools {
   }
 }
 
-Tools.Depricate(oldValue,msg="Something has depricated.", solutions = "No alternative has been provided to use") {
+Tools.Depricate = function(oldValue,msg="Something has depricated.", solutions = "No alternative has been provided to use") {
   var warningMsg = msg + " ";
-  var finishUp = () {
-    warningMsg.append(" instead.");
+  var finishUp = ()=> {
+    warningMsg += " instead.";
     process.emitWarning(
       warningMsg,
       'DeprecationWarning'
     );
   }
 
-  if (Array.isArray(solutions)) {
-    solutions.forEach((solution,i,array){
+  if (Array.isArray(solutions) && solutions.length>1) {
+    solutions.forEach((solution,i,array)=>{
       if (i==0) {
-        warningMsg.append(`Use \`${solution}\`, or preferably`)
-      } elseif (i==array.length-1) {
-        warningMsg.append(` or \`${solution}\``);
+        warningMsg += `Use \`${solution}\`, or preferably`;
+      } else if (i==array.length-1) {
+        if (i==1) {
+          warningMsg += `\`${solution}\``;
+        } else {
+          warningMsg += ` or \`${solution}\``;
+        }
       } else {
-        warningMsg.append(`, \`${solution}\``);
+        warningMsg += `, \`${solution}\``;
         finishUp();
       }
     });
   } else {
-    warningMsg.append(`Use \`${solutions}\``);
+    warningMsg += `Use \`${solutions}\``;
     finishUp();
   }
 
@@ -89,7 +93,8 @@ Tools.DisplayList = function(array, map, title="") {
 Tools.CommandBases = require("./commandBases");
 
 /** @deprecated use Tools.DisplayList instead **/
-Tools.displayList = Tools.DisplayList;
+Tools.displayList = Tools.Depricate(Tools.DisplayList,"Tools.displayList will no longer work","Tools.DisplayList");
+
 /** @deprecated use Tools.CommandBases instead **/
-Tools.commandsBase = require("./commandBases");
+Tools.commandsBase = Tools.Depricate(Tools.CommandBases,"Tools.commandsBase will no longer work","Tools.CommandBases");
 module.exports = Tools;
