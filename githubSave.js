@@ -33,7 +33,7 @@ var options = {
 
 function LoadPhones(cb) {
   request({
-    url: "https://raw.githubusercontent.com/tumblenet/tnphone.tumblenet.gae/master/_data/phones.json",
+    url: "https://raw.githubusercontent.com/tumblenet/tnphone.tumblenet.ga/master/_data/phones.json",
     json: true,
     followAllRedirects: true
   }, function (error, response, body) {
