@@ -212,11 +212,11 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: 'Type =help for commands' }, status: 'online' })
 
   Saving.LoadPhoneData(function (data) {
-    phones = data.phones;
+    //phones = data.phones;
     callsMade = data.callsMade || 0;
   });
   setInterval(() => {
-    Saving.SavePhoneData({phones:phones,callsMade:callsMade,servers:client.guilds.array().length,currentCalls:calls.length});
+    Saving.SavePhoneData({/*phones:phones,*/callsMade:callsMade,servers:client.guilds.array().length,currentCalls:calls.length});
   },6000);
 });
 
